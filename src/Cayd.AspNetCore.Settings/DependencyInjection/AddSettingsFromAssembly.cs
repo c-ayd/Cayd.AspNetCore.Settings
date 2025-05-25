@@ -6,7 +6,7 @@ namespace Cayd.AspNetCore.Settings.DependencyInjection
     public static partial class DependencyInjectionExtensions
     {
         /// <summary>
-        /// Finds all classes inheriting <see cref="ISettings"/> by the given assembly and configures the settings automatically.
+        /// Finds all classes implementing <see cref="ISettings"/> by the given assembly and configures the settings automatically.
         /// </summary>
         /// <param name="assembly">Assembly in which settings will be searched.</param>
         public static void AddSettingsFromAssembly(this IHostApplicationBuilder builder, Assembly assembly)
