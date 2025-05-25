@@ -15,7 +15,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>git@github.com:c-ayd/Cayd.AspNetCore.Settings.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>cayd;aspnetcore;settings;options;helper;</PackageTags>
+    <PackageTags>cayd;aspnetcore;settings;options;ioptions;options-pattern;configuration;helper;</PackageTags>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
