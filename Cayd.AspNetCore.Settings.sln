@@ -20,6 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "Integra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayd.AspNetCore.Settings.Test.Integration.WebApi", "test\IntegrationTests\Cayd.AspNetCore.Settings.Test.Integration.WebApi\Cayd.AspNetCore.Settings.Test.Integration.WebApi.csproj", "{E923E311-C690-46FD-A86D-21A163B4D708}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{6A17BB90-59A4-434F-8DB5-5A44F7CFBE4D}"
+	ProjectSection(SolutionItems) = preProject
+		assets\nuget-logo.png = assets\nuget-logo.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
