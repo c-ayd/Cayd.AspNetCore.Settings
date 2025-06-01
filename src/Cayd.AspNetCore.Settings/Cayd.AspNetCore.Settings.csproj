@@ -7,16 +7,14 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>Cayd.AspNetCore.Settings</PackageId>
     <Title>Helper library registering configurations automatically from appsettings, user secrets and environment variables</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Cemal A. Aydeniz</Authors>
     <Description>A helper library registering configurations automatically from appsettings, user secrets and environment variables</Description>
-    <PackageProjectUrl>https://github.com/c-ayd/Cayd.AspNetCore.Settings</PackageProjectUrl>
     <PackageIcon>nuget-logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>git@github.com:c-ayd/Cayd.AspNetCore.Settings.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/c-ayd/Cayd.AspNetCore.Settings</RepositoryUrl>
     <PackageTags>cayd;aspnetcore;settings;options;ioptions;options-pattern;configuration;helper;</PackageTags>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes>Update package info: source repository is added</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
