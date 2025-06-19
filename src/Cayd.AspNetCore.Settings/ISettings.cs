@@ -1,7 +1,7 @@
 ﻿namespace Cayd.AspNetCore.Settings
 {
     /// <summary>
-    /// Marks classes representing configuration structures to be added automatically.
+    /// Marks the class as a representation of a configuration that will be added automatically.
     /// </summary>
     public interface ISettings
     {
