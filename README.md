@@ -27,11 +27,11 @@ public class JwtSettings : ISettings
 {
     public static string SettingsKey => "Jwt"; // -> Top-level section name of your configuration
 
-    public required string SecretKey { get; set; }
-    public required string Issuer { get; set; }
-    public required string Audience { get; set; }
-    public required int AccessTokenLifeSpanInMinutes { get; set; }
-    public required int RefreshTokenLifeSpanInDays { get; set; }
+    public string SecretKey { get; set; }
+    public string Issuer { get; set; }
+    public string Audience { get; set; }
+    public int AccessTokenLifeSpanInMinutes { get; set; }
+    public int RefreshTokenLifeSpanInDays { get; set; }
 }
 ```
 
