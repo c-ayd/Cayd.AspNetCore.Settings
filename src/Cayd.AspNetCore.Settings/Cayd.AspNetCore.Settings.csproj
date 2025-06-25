@@ -14,7 +14,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/c-ayd/Cayd.AspNetCore.Settings</RepositoryUrl>
     <PackageTags>cayd;aspnetcore;settings;options;ioptions;options-pattern;configuration;helper;</PackageTags>
-    <PackageReleaseNotes>Update package info: source repository is added</PackageReleaseNotes>
+    <PackageReleaseNotes>Update framework reference</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
