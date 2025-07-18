@@ -35,15 +35,20 @@ public class JwtSettings : ISettings
 }
 ```
 
-Afterwards, you need to use one of the extension methods of the library (extending `IHostApplicationBuilder`) to register all configurations you define in an assembly. For this example, the `AddSettingsFromAssembly` is used.
+Afterwards, you need to use one of the extension methods of the library to register all configurations you define in an assembly.
 ```csharp
 using Cayd.AspNetCore.Settings.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder();
 
+// via 'IHostApplicationBuilder'
 var assembly = Assembly.GetAssembly(typeof(Program));
 builder.AddSettingsFromAssembly(assembly);
+
+// or via 'IServiceCollection'
+var assembly = Assembly.GetAssembly(typeof(Program));
+builder.Services.AddSettingsFromAssembly(builder.Configuration, assembly);
 ```
 
 You can then use the class you created in your code via the dependency injection system.
@@ -92,7 +97,15 @@ var infrastructureLayerAssembly = Assembly.GetAssembly(typeof(MyClassInInfrastru
 var persistenceLayerAssembly = Assembly.GetAssembly(typeof(MyClassInPersistenceLayer));
 var presentationLayerAssembly = Assembly.GetAssembly(typeof(MyClassInPresentationLayer));
 
+// via 'IHostApplicationBuilder'
 builder.AddSettingsFromAssemblies(applicationLayerAssembly,
+    infrastructureLayerAssembly,
+    persistenceLayerAssembly,
+    presentationLayerAssembly);
+
+// or via 'IServiceCollection'
+builder.Services.AddSettingsFromAssemblies(builder.Configuration,
+    applicationLayerAssembly,
     infrastructureLayerAssembly,
     persistenceLayerAssembly,
     presentationLayerAssembly);
