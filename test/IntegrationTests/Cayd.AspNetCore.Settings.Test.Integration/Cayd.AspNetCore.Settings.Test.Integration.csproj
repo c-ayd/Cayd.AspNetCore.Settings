@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Cayd.AspNetCore.Settings\Cayd.AspNetCore.Settings.csproj" />
+    <ProjectReference Include="..\Cayd.AspNetCore.Settings.Test.Integration.OtherAssembly\Cayd.AspNetCore.Settings.Test.Integration.OtherAssembly.csproj" />
   </ItemGroup>
 
   <ItemGroup>

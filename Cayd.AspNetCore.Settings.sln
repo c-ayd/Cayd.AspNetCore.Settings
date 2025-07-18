@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{6A17BB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cayd.AspNetCore.Settings.Test.Integration", "test\IntegrationTests\Cayd.AspNetCore.Settings.Test.Integration\Cayd.AspNetCore.Settings.Test.Integration.csproj", "{2D58C8AA-9AE6-4135-8E00-96283A2D3143}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayd.AspNetCore.Settings.Test.Integration.OtherAssembly", "test\IntegrationTests\Cayd.AspNetCore.Settings.Test.Integration.OtherAssembly\Cayd.AspNetCore.Settings.Test.Integration.OtherAssembly.csproj", "{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2D58C8AA-9AE6-4135-8E00-96283A2D3143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D58C8AA-9AE6-4135-8E00-96283A2D3143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D58C8AA-9AE6-4135-8E00-96283A2D3143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{A5426049-80AA-4E30-8364-392011775389} = {A1FEC1AD-3612-4ACC-A2B3-4CB9CBA1306C}
 		{E97CC48F-FDEA-42C7-8AF3-74EAE9BF7C78} = {F6A2F178-F876-4F59-A1AF-747E1E20D385}
 		{2D58C8AA-9AE6-4135-8E00-96283A2D3143} = {E97CC48F-FDEA-42C7-8AF3-74EAE9BF7C78}
+		{DE4A22B2-4B5C-4D73-A8AF-5920D3F0C7F4} = {E97CC48F-FDEA-42C7-8AF3-74EAE9BF7C78}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC84B3E2-AC45-4A25-AEDA-19F9075EC1B9}
