@@ -25,7 +25,7 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
             _listInt = new List<int>() { 1, 2, 3 };
         }
 
-        private async Task<IHost> CreateHost()
+        private async Task<IHost> CreateHost(ERegistrationType registrationType)
         {
             var builder = WebApplication.CreateBuilder(new WebApplicationOptions
             {
@@ -37,7 +37,17 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
                 .AddJsonFile("Utilities/appsettings.json", false)
                 .AddUserSecrets<SettingsTest>();
 
-            builder.AddSettingsFromAssembly(_currentAssembly);
+            switch (registrationType)
+            {
+                case ERegistrationType.Services:
+                    builder.Services.AddSettingsFromAssembly(builder.Configuration, _currentAssembly);
+                    break;
+                case ERegistrationType.Builder:
+                default:
+                    builder.AddSettingsFromAssembly(_currentAssembly);
+                    break;
+            }
+
             builder.WebHost.UseTestServer();
 
             var host = builder.Build();
@@ -51,11 +61,13 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
             host.Dispose();
         }
 
-        [Fact]
-        public async Task WhenClassesImplementISettingsInterfaceAndRegisteredViaAssembly_ShouldReturnValuesInSettings()
+        [Theory]
+        [InlineData(ERegistrationType.Builder)]
+        [InlineData(ERegistrationType.Services)]
+        public async Task WhenClassesImplementISettingsInterfaceAndRegistered_ShouldReturnValuesInSettings(ERegistrationType registrationType)
         {
             // Arrange
-            var host = await CreateHost();
+            var host = await CreateHost(registrationType);
 
             // Act
             var mySettings = host.Services.GetRequiredService<IOptions<MySettings>>().Value;
@@ -76,6 +88,12 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
             Assert.Equal("test-secret-value", myUserSecrets.SecretValue);
 
             await DisposeHost(host);
+        }
+
+        public enum ERegistrationType
+        {
+            Builder = 0,
+            Services = 1
         }
     }
 }
