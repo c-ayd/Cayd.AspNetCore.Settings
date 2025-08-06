@@ -38,7 +38,8 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
 
             builder.Configuration
                 .AddJsonFile("Utilities/appsettings.json", false)
-                .AddUserSecrets<SettingsTest>();
+                .AddUserSecrets<SettingsTest>()
+                .AddEnvironmentVariables();
 
             AddSettings(builder, registrationType, assemblies);
 
@@ -144,6 +145,33 @@ namespace Cayd.AspNetCore.Settings.Test.Integration
             Assert.Equal("other-assembly-value", otherAssemblySettings.Value);
 
             await DisposeHost(host);
+        }
+
+        [Fact]
+        public async Task WhenConfigurationsComeFromEnvironmentVariables_ShouldReturnValuesInSettings()
+        {
+            // Arrange
+            Environment.SetEnvironmentVariable("Env__StrValue", "env-test-value");
+            Environment.SetEnvironmentVariable("Env__IntValue", "55");
+            Environment.SetEnvironmentVariable("Env__StrValues__0", "env-str-1");
+            Environment.SetEnvironmentVariable("Env__StrValues__1", "env-str-2");
+            Environment.SetEnvironmentVariable("Env__IntValues__0", "11");
+            Environment.SetEnvironmentVariable("Env__IntValues__1", "22");
+            Environment.SetEnvironmentVariable("Env__IntValues__2", "33");
+
+            var host = await CreateHost(ERegistrationType.Builder, _currentAssembly, _otherAssembly);
+
+            // Act
+            var envSettings = host.Services.GetRequiredService<IOptions<EnvSettings>>().Value;
+
+            // Assert
+            Assert.Equal("env-test-value", envSettings.StrValue);
+            Assert.Equal(55, envSettings.IntValue);
+            Assert.Equal("env-str-1", envSettings.StrValues[0]);
+            Assert.Equal("env-str-2", envSettings.StrValues[1]);
+            Assert.Equal(11, envSettings.IntValues[0]);
+            Assert.Equal(22, envSettings.IntValues[1]);
+            Assert.Equal(33, envSettings.IntValues[2]);
         }
 
         public enum ERegistrationType
